@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/explore.css">
+    <link rel="icon" href="assets/icon.png">
+    <title>Explore - UK Drum and Bass</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html">about</a>
+        <a href="explore.html">explore</a>
+        <a href="bibliography.html">bibliography</a>
+    </div>
+    <div id="divider"></div>
+    <div class="content">
+
+    </div>
+</body>
+<script src="scripts/explore.js"></script>
+<script type="module">
+    import WaveSurfer from 'https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js'
+
+    const wavesurfer = WaveSurfer.create({
+        container: '#waveform',
+        waveColor: '#4F4A85',
+        progressColor: '#383351',
+        url: 'assets/07 movies for guys.mp3',
+        mediaControls: true,
+        autoScroll: true,
+    })
+</script>
+
+</html>
