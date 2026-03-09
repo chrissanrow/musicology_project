@@ -23,34 +23,12 @@ body{
     background-color: #000;
 }
 
-#photo-attribution{
-    color: #363636;
-    text-align: justify;
-    font-family: Helvetica;
-    font-size: 1em;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 35px;
-    /* 100% */
-    text-underline-position: from-font;
-}
-
-#photo-attribution a{
+h1 {
     color: #4E1414;
     font-family: Helvetica;
-    font-size: 1em;
+    font-size: 5em;
     font-weight: 400;
-    text-decoration-line: none;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
-}
-
-h1{
-    text-align: justify;
-    font-family: Helvetica;
-    font-size: 6.5em;
-    font-style: normal;
-    font-weight: 400;
+    line-height: 75px;
     /* 100% */
 }
 
@@ -64,13 +42,22 @@ a{
     text-underline-position: from-font;
 }
 
-#hook{
+p {
     color: #363636;
     text-align: justify;
-    font-family: Helvetica;
-    font-size: 40px;
+    font-family: Georgia;
+    font-size: 2em;
     font-style: normal;
     font-weight: 400;
-    line-height: 50px;
+    line-height: 35px;
     /* 100% */
+    text-underline-position: from-font;
+}
+
+.content a{
+    color: #363636;
+    text-align: justify;
+    font-family: Georgia;
+    font-size: 1em;
+    text-decoration: underline;
 }

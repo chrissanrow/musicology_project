@@ -14,6 +14,7 @@
     <div class="navbar">
         <a href="index.html">about</a>
         <a href="explore.html">explore</a>
+        <a href="methodology.html">methodology</a>
         <a href="bibliography.html">bibliography</a>
     </div>
     <div id="divider"></div>
@@ -21,18 +22,33 @@
     <h1>
         Introduction
     </h1>
+    <figure>
+        <img src="assets/goldie_pendulum.png" style="width: 100%" alt="Artists Goldie and Pendulum pictured">
+        <figcaption>Artists Goldie and Pendulum pictured (from documentary "Drum & Bass: The Movement - A D&B Documentary")</figcaption>
+    </figure>
     <button onclick="skipToContent()">
         Skip to Content
     </button>
     <div class="row animation" data-animation="fade-in-bottom">
-        <!-- TODO: this is just filler text from wikipedia, rewrite to provide a more cohesive background after integrating all the visualizations -->
-            <p>
-            Drum and bass began as a musical paradigm shift of the United Kingdom breakbeat hardcore and rave scene of the mid 1990s; and over the first decade and a half of its existence there have been many permutations in its style, incorporating elements from dancehall, electro, funk, hip hop, house, jazz, pop-created fusion of hardcore, house and techno (also including new beat). This scene existed briefly from approximately 1989-1993, a period of cross-pollination in the UK hardcore sound. This sound did survive in various forms in its mother countries - primarily Belgium, the Netherlands and Germany - beyond 1992, but by then the general scenes in these countries had moved forwards to trance, industrial techno or Gabber (with happy hardcore/hard house being the equivalent 'Belgian Techno' - derivative sounds in the UK). London and Bristol are the two cities which are most associated with Drum and Bass. Birmingham and the West Midlands also had an extensive influence, especially around Digbeth, acting as a hub for Drum and Bass, hosting some of the UKs fledgling drum and bass events and godfathers of the genre Goldie and Doc Scott both local to the area.
+        <p>
+            Drum and bass (also known as Drum 'n' bass, DnB, or D&B) is a subgenre of electronic music characterized by "complex digitised drum patterns and synthetically-treated booming baselines" (Quinn, 2002).
         </p>
     </div>
     <div class="row animation" data-animation="fade-in-bottom">
         <p>
-            The first wave of drum and bass was characterised by a dark, menacing sound, with heavy use of the Amen break and other sampled breakbeats, deep basslines, and often dystopian or sci-fi themes. This sound was popularised by artists such as Goldie, Roni Size, and LTJ Bukem. The second wave of drum and bass, which emerged in the late 1990s and early 2000s, was characterised by a more polished and commercial sound, with a greater emphasis on melody and vocals. This sound was popularised by artists such as Pendulum, Chase & Status, and Sub Focus. The third wave of drum and bass, which emerged in the mid-2000s, was characterised by a more experimental and eclectic sound, with a greater emphasis on live instrumentation and genre-blending. This sound was popularised by artists such as Noisia, Calibre, and Alix Perez.
+            The genre emerged from the United Kingdom rave scene, with traces of influence from UK hip hop, electro, techno, and hardcore. In particular, London and Bristol are most attributed as important cities in the scene.
+        </p>
+    </div>
+
+    <div class="row animation" data-animation="fade-in-bottom">
+        <p>
+            The DnB movement formed as an assertion of a uniquely black British identity which reflects a "metonymic formulation of the long history of race and migration and its (often invisible) effects on the nature of British cultural identity" (Quinn, 2002).
+        </p>
+    </div>
+
+    <div class="row animation" data-animation="fade-in-bottom">
+        <p>
+            The following visualizations draw from the Discogs data source to discover how the geographic distribution (both within and outside of the UK) of DnB releases over the past 30 years reflects its written history.
         </p>
     </div>
 
@@ -57,7 +73,7 @@
         </p>
     </div>
     <div class="content">
-        <div id="map" style="height: 700px; width: 100%;"></div>
+        <div id="map1" style="height: 700px; width: 100%;"></div>
     
         <div class="slider-container">
             <p id="slider-text">Selected Period: <span id="period-display">1990-1994</span></p>
@@ -67,17 +83,72 @@
 
     <!-- SECTION 3 -->
     <h2>
-        Significant Artist Relationships
+        UK Drum and Bass Hubs
     </h2>
 
+    <div class="row animation" data-animation="fade-in-bottom">
+        <p>
+            The previous map established the global influence of UK DnB, from the early 1990s to the present day. But what about within the UK itself? What cities were critical in the emergence of DnB? Written history says especially Bristol and secondarily London, but does the Discogs data reflect this idea?
+        </p>
+    </div>
+    <div class="row animation" data-animation="fade-in-bottom">
+        <p>
+            The following map visualizes clusters of drum and bass releases within the UK, based on number of releases per city. Although the Discogs API does not provide city-level data, we can extract artist information from the emergent time period (1990-1994) and manually geocode the top cities to visualize where the most influential hubs were.
+        </p>
+    </div>
+
+    <div id="map2" style="height: 700px; width: 100%;"></div>
+
+    <div class="row animation" data-animation="fade-in-bottom">
+        <p>
+            While much of the literature describes Bristol as the hub of DnB, the data seems to indicate that London had more releases. This is likely due to the limited data available regarding which city the artists/labels releasing the music were from and London is much more likely to appear in any language searches than Bristol. However, we still see that Bristol is the second most influential city during this rising period.
+        </p>
+    </div>
+
+    <!-- SECTION 4-->
+
+    <h2>
+        Bristol versus London DnB: A Case Study
+    </h2>
+
+    <div class="row animation" data-animation="fade-in-bottom">
+        <p>
+            Finally, we can take a closer look at the two most influential cities in the UK DnB scene: Bristol and London. Using the spotify API for some selected songs drawn from the emergent 1990-2000 period from each city, we can compare the audio features of each track to see if there are any noticeable differences in the music itself. Bristol is often described as having more jazz influences and a more "laid back" sound, while London is often described as more aggressive and industrial. Do the audio features reflect these descriptions?
+        </p>
+    </div>
+
+    <div class="song-card-container">
+        <h3>Bristol Tracks</h3>
+        <div id="bristol-cards" class="cards"></div>
+    </div>
+
+    <div class="song-card-container">
+        <h3>London Tracks</h3>
+        <div id="london-cards" class="cards"></div>
+    </div>
+
+    <canvas id="dnbRadarChart" width="200" height="200"></canvas>
+
+    <div class="row animation" data-animation="fade-in-bottom">
+        <p>
+            The radar chart above compares the average audio features of the selected Bristol and London tracks. Each axis represents a different audio feature (danceability, energy, valence, tempo, and instrumentalness), and the values are normalized on a scale from 0 to 1.
+        </p>
+    </div>
+
+    <div class="row animation" data-animation="fade-in-bottom">
+        <p>
+            The valence of Bristol is "happier" on average, reflecting the more soulful and jazz influenced sound. The higher danceability of the Bristol tracks reflects the Bristol Roll (as described in Belle-Fortune's book on DnB). The higher energy of the London tracks reflects the more aggressive and industrial sound of London DnB. Both cities have very high instrumentalness, reflecting the fact that DnB is primarily an instrumental genre with occassional vocal samples. Of course, because DnB is an electronic and highly digital genre, the acousticness is near 0 for all tracks.
+        </p>
+    </div>
 </body>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="scripts/explore.js"></script>
 <script>
     window.onload = function() {
         const slider = document.getElementById('year-slider');
         slider.value = 0;
-        updateMap(0);
+        updateMap1(0);
     };
 </script>
 </html>

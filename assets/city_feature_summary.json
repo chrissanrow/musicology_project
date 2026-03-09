@@ -1,0 +1,16 @@
+{
+    "London": {
+        "danceability": 0.5966,
+        "energy": 0.9071999999999999,
+        "valence": 0.3422,
+        "acousticness": 0.0247918,
+        "instrumentalness": 0.7106
+    },
+    "Bristol": {
+        "danceability": 0.6552,
+        "energy": 0.8742000000000001,
+        "valence": 0.5292,
+        "acousticness": 0.00081668,
+        "instrumentalness": 0.745
+    }
+}

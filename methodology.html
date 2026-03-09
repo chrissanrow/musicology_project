@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/methodology.css">
+    <link rel="icon" href="assets/icon.png">
+    <title>Methodology - UK Drum and Bass</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html">about</a>
+        <a href="explore.html">explore</a>
+        <a href="methodology.html">methodology</a>
+        <a href="bibliography.html">bibliography</a>
+    </div>
+    <div id="divider"></div>
+    <div class="content">
+        <h1>Methodology</h1>
+        <p>
+            Here I describe some of the high level choices made and general processes taken to gather, clean, and visualize the data used in this project.
+        </p>
+
+        <p>
+            The Discogs database was used as the primary data source for the first two visualizations, which explore the geographic distribution of DnB releases over the past 30 years. The data was gathered using the <a>Discogs API</a> and a <a>python client</a>.
+        </p>
+
+        <p>
+            For the first visualization, the API was queried for releases with the style "Drum and Bass". These release objects had a country property which was geocoded to latitude longitude using the <a>OpenCage Geocoding API</a>. The resulting data was visualized using the <a>Leaflet JavaScript library</a>. To determine the top 5 releases to display, I utilized the "have" property of the release objects, which indicates how many users in the Discogs community have that release in their collection. I find this a reasonable metric as the top 5 releases is not meant to be an authoritative list but an approximate representation of some of the songs from that country.
+        </p>
+
+        <p>
+            For the second visualization, the API was queried for releases with the style "Drum and Bass" and the country "UK". The resulting release objects had their artist arrays parsed, and the profile of the first artist was checked for a matching city in the UK. These cities were again geocoded to latitude longitude using the OpenCage Geocoding API and visualized using the Leaflet JavaScript library. The reason this multi-step process was necessary was because no other resource provides a more specific geographic location for the releases, which unfortunately does lead to some artifacts in the data with Bristol not having very many releases.
+        </p>
+
+        <p>
+            The third visualization draws from the RapidAPI "Spotify Extended Audio Features API", which was queried for some hand-picked songs and their associated audio_features values. These values are ML-computed by Spotify and are not easily interpretable, but it sufficed to compare the differences between London and Bristol DnB songs. The reason I chose 5 songs from each city was to have a small enough sample size to be able to meaningfully cross-reference the data with the song feeling and feasibly make API requests. Given more time on the project, I would have liked to expand the sample size. The data was processed and visualized using the <a>Chart.js JavaScript library</a>.
+        </p>
+
+        <p>
+            See GitHub repository to reproduce data: <a href="https://github.com/your-repo" target="_blank">GITHUB</a>
+        </p>
+    </div>
+</body>
+
+</html>
