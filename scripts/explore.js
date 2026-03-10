@@ -1,8 +1,34 @@
-function skipToContent(){
-    const content = document.getElementById("content");
-    content.scrollIntoView({behavior: "smooth"});
+function nextSection(sectionNumber) {
+    const nextSection = document.getElementById('section' + sectionNumber);
+    const currentSection = document.getElementById('section' + (sectionNumber - 1));
+
+    if (currentSection) {
+        currentSection.style.display = 'none';
+    }
+    if (nextSection) {
+        nextSection.style.display = 'block';
+    }
+
+    // Scroll to the top of the next section
+    const navbar = document.getElementsByClassName('navbar')[0];
+    navbar.scrollIntoView({ behavior: 'smooth' });
 }
 
+function previousSection(sectionNumber) {
+    const previousSection = document.getElementById('section' + sectionNumber);
+    const currentSection = document.getElementById('section' + (sectionNumber + 1));
+
+    if (currentSection) {
+        currentSection.style.display = 'none';
+    }
+    if (previousSection) {
+        previousSection.style.display = 'block';
+    }
+
+    // Scroll to the top of the previous section
+    const navbar = document.getElementsByClassName('navbar')[0];
+    navbar.scrollIntoView({ behavior: 'smooth' });
+}
 /*
 Visualization 1: country-based geographic distribution of releases from 5-year increments with clusters of datapoints
 Hovering over a cluster will show the number of releases from that geographic area and the top 5 releases from that area

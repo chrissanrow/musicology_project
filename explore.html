@@ -19,126 +19,135 @@
     </div>
     <div id="divider"></div>
     <!-- SECTION 1 -->
-    <h1>
-        Introduction
-    </h1>
-    <figure>
-        <img src="assets/goldie_pendulum.png" style="width: 100%" alt="Artists Goldie and Pendulum pictured">
-        <figcaption>Artists Goldie and Pendulum pictured (from documentary "Drum & Bass: The Movement - A D&B Documentary")</figcaption>
-    </figure>
-    <button onclick="skipToContent()">
-        Skip to Content
-    </button>
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            Drum and bass (also known as Drum 'n' bass, DnB, or D&B) is a subgenre of electronic music characterized by "complex digitised drum patterns and synthetically-treated booming baselines" (Quinn, 2002).
-        </p>
-    </div>
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            The genre emerged from the United Kingdom rave scene, with traces of influence from UK hip hop, electro, techno, and hardcore. In particular, London and Bristol are most attributed as important cities in the scene.
-        </p>
-    </div>
+    <div id="section1">
+        <h1>
+            Introduction
+        </h1>
+        <figure>
+            <img src="assets/goldie_pendulum.png" style="width: 100%" alt="Artists Goldie and Pendulum pictured">
+            <figcaption>Artists Goldie and Pendulum pictured (from documentary "Drum & Bass: The Movement - A D&B Documentary")</figcaption>
+        </figure>
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                Drum and bass (also known as Drum 'n' bass, DnB, or D&B) is a subgenre of electronic music characterized by "complex digitised drum patterns and synthetically-treated booming baselines" (Quinn, 2002).
+            </p>
+        </div>
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                The genre emerged from the United Kingdom rave scene, with traces of influence from UK hip hop, electro, techno, and hardcore. In particular, London and Bristol are most attributed as important cities in the scene.
+            </p>
+        </div>
 
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            The DnB movement formed as an assertion of a uniquely black British identity which reflects a "metonymic formulation of the long history of race and migration and its (often invisible) effects on the nature of British cultural identity" (Quinn, 2002).
-        </p>
-    </div>
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                The DnB movement formed as an assertion of a uniquely black British identity which reflects a "metonymic formulation of the long history of race and migration and its (often invisible) effects on the nature of British cultural identity" (Quinn, 2002).
+            </p>
+        </div>
 
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            The following visualizations draw from the Discogs data source to discover how the geographic distribution (both within and outside of the UK) of DnB releases over the past 30 years reflects its written history.
-        </p>
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                The following visualizations draw from the Discogs data source to discover how the geographic distribution (both within and outside of the UK) of DnB releases over the past 30 years reflects its written history.
+            </p>
+        </div>
+        <button onclick="nextSection(2)">Next Section</button>
     </div>
-
-    
-    <h1 id="content">
-        Visualizations
-    </h1>
     
     <!-- SECTION 2 -->
-    <h2>
-        Global influence of UK Drum and Bass
-    </h2>
+    <div id="section2">
+        <h1>
+            Global influence of UK Drum and Bass
+        </h1>
 
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            The following map visualizes clusters (green circles) of drum and bass releases from the Discogs data dumps, based on number of releases per country. You can adjust the slider to view different time periods.
-        </p>
-    </div>
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            Clicking on a cluster will show the top 5 releases based on "have" count in Discogs, as well as the total number of releases from that country and time period.
-        </p>
-    </div>
-    <div class="content">
-        <div id="map1" style="height: 700px; width: 100%;"></div>
-    
-        <div class="slider-container">
-            <p id="slider-text">Selected Period: <span id="period-display">1990-1994</span></p>
-            <input type="range" id="year-slider" min="0" max="6" step="1" value="0">
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                The following map visualizes clusters (green circles) of drum and bass releases from the Discogs data dumps, based on number of releases per country. You can adjust the slider to view different time periods.
+            </p>
+        </div>
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                Clicking on a cluster will show the top 5 releases based on "have" count in Discogs, as well as the total number of releases from that country and time period.
+            </p>
+        </div>
+        <div class="content">
+            <div id="map1" style="height: 700px; width: 100%;"></div>
+        
+            <div class="slider-container">
+                <p id="slider-text">Selected Period: <span id="period-display">1990-1994</span></p>
+                <input type="range" id="year-slider" min="0" max="6" step="1" value="0">
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 10px;">
+            <button onclick="previousSection(1)">Previous Section</button>
+            <button onclick="nextSection(3)">Next Section</button>
         </div>
     </div>
 
     <!-- SECTION 3 -->
-    <h2>
-        UK Drum and Bass Hubs
-    </h2>
-
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            The previous map established the global influence of UK DnB, from the early 1990s to the present day. But what about within the UK itself? What cities were critical in the emergence of DnB? Written history says especially Bristol and secondarily London, but does the Discogs data reflect this idea?
-        </p>
-    </div>
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            The following map visualizes clusters of drum and bass releases within the UK, based on number of releases per city. Although the Discogs API does not provide city-level data, we can extract artist information from the emergent time period (1990-1994) and manually geocode the top cities to visualize where the most influential hubs were.
-        </p>
-    </div>
-
-    <div id="map2" style="height: 700px; width: 100%;"></div>
-
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            While much of the literature describes Bristol as the hub of DnB, the data seems to indicate that London had more releases. This is likely due to the limited data available regarding which city the artists/labels releasing the music were from and London is much more likely to appear in any language searches than Bristol. However, we still see that Bristol is the second most influential city during this rising period.
-        </p>
+    <div id="section3">
+        <h1>
+            UK Drum and Bass Hubs
+        </h1>
+    
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                The previous map established the global influence of UK DnB, from the early 1990s to the present day. But what about within the UK itself? What cities were critical in the emergence of DnB? Written history says especially Bristol and secondarily London, but does the Discogs data reflect this idea?
+            </p>
+        </div>
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                The following map visualizes clusters of drum and bass releases within the UK, based on number of releases per city. Although the Discogs API does not provide city-level data, we can extract artist information from the emergent time period (1990-1994) and manually geocode the top cities to visualize where the most influential hubs were.
+            </p>
+        </div>
+    
+        <div id="map2" style="height: 700px; width: 100%;"></div>
+    
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                While much of the literature describes Bristol as the hub of DnB, the data seems to indicate that London had more releases. This is likely due to the limited data available regarding which city the artists/labels releasing the music were from and London is much more likely to appear in any language searches than Bristol. However, we still see that Bristol is the second most influential city during this rising period.
+            </p>
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 10px;">
+            <button onclick="previousSection(2)">Previous Section</button>
+            <button onclick="nextSection(4)">Next Section</button>
+        </div>
     </div>
 
     <!-- SECTION 4-->
-
-    <h2>
-        Bristol versus London DnB: A Case Study
-    </h2>
-
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            Finally, we can take a closer look at the two most influential cities in the UK DnB scene: Bristol and London. Using the spotify API for some selected songs drawn from the emergent 1990-2000 period from each city, we can compare the audio features of each track to see if there are any noticeable differences in the music itself. Bristol is often described as having more jazz influences and a more "laid back" sound, while London is often described as more aggressive and industrial. Do the audio features reflect these descriptions?
-        </p>
-    </div>
-
-    <div class="song-card-container">
-        <h3>Bristol Tracks</h3>
-        <div id="bristol-cards" class="cards"></div>
-    </div>
-
-    <div class="song-card-container">
-        <h3>London Tracks</h3>
-        <div id="london-cards" class="cards"></div>
-    </div>
-
-    <canvas id="dnbRadarChart" width="200" height="200"></canvas>
-
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            The radar chart above compares the average audio features of the selected Bristol and London tracks. Each axis represents a different audio feature (danceability, energy, valence, tempo, and instrumentalness), and the values are normalized on a scale from 0 to 1.
-        </p>
-    </div>
-
-    <div class="row animation" data-animation="fade-in-bottom">
-        <p>
-            The valence of Bristol is "happier" on average, reflecting the more soulful and jazz influenced sound. The higher danceability of the Bristol tracks reflects the Bristol Roll (as described in Belle-Fortune's book on DnB). The higher energy of the London tracks reflects the more aggressive and industrial sound of London DnB. Both cities have very high instrumentalness, reflecting the fact that DnB is primarily an instrumental genre with occassional vocal samples. Of course, because DnB is an electronic and highly digital genre, the acousticness is near 0 for all tracks.
-        </p>
+    <div id="section4">
+        <h1>
+            Bristol versus London DnB: A Case Study
+        </h1>
+    
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                Finally, we can take a closer look at the two most influential cities in the UK DnB scene: Bristol and London. Using the spotify API for some selected songs drawn from the emergent 1990-2000 period from each city, we can compare the audio features of each track to see if there are any noticeable differences in the music itself. Bristol is often described as having more jazz influences and a more "laid back" sound, while London is often described as more aggressive and industrial. Do the audio features reflect these descriptions?
+            </p>
+        </div>
+    
+        <div class="song-card-container">
+            <h3>Bristol Tracks</h3>
+            <div id="bristol-cards" class="cards"></div>
+        </div>
+    
+        <div class="song-card-container">
+            <h3>London Tracks</h3>
+            <div id="london-cards" class="cards"></div>
+        </div>
+    
+        <canvas id="dnbRadarChart" width="200" height="200"></canvas>
+    
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                The radar chart above compares the average audio features of the selected Bristol and London tracks. Each axis represents a different audio feature (danceability, energy, valence, tempo, and instrumentalness), and the values are normalized on a scale from 0 to 1.
+            </p>
+        </div>
+    
+        <div class="row animation" data-animation="fade-in-bottom">
+            <p>
+                The valence of Bristol is "happier" on average, reflecting the more soulful and jazz influenced sound. The higher danceability of the Bristol tracks reflects the Bristol Roll (as described in Belle-Fortune's book on DnB). The higher energy of the London tracks reflects the more aggressive and industrial sound of London DnB. Both cities have very high instrumentalness, reflecting the fact that DnB is primarily an instrumental genre with occassional vocal samples. Of course, because DnB is an electronic and highly digital genre, the acousticness is near 0 for all tracks.
+            </p>
+        </div>
+        <button onclick="previousSection(3)">Previous Section</button>
     </div>
 </body>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -149,6 +158,11 @@
         const slider = document.getElementById('year-slider');
         slider.value = 0;
         updateMap1(0);
+
+        document.getElementById('section1').style.display = 'block';
+        document.getElementById('section2').style.display = 'none';
+        document.getElementById('section3').style.display = 'none';
+        document.getElementById('section4').style.display = 'none';
     };
 </script>
 </html>
