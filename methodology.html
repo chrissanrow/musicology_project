@@ -14,11 +14,17 @@
         <a href="index.html">about</a>
         <a href="explore.html">explore</a>
         <a href="methodology.html">methodology</a>
-        <a href="bibliography.html">bibliography</a>
     </div>
     <div id="divider"></div>
     <div class="content">
         <h1>Methodology</h1>
+
+        <p style="font-style: italic;">
+            See GitHub repository to reproduce data: <a href="https://github.com/chrissanrow/dnb_scripts" target="_blank">GITHUB</a>
+            <br>
+            Project documentation for full process: <a href="https://docs.google.com/document/d/1Q685WTDztEAObFQ62wxgci9-YIr3fhWVg7QX3odbnc4/edit?usp=sharing" target="_blank">GOOGLE DOC</a>
+        </p>
+
         <p>
             Here I describe some of the high level choices made and general processes taken to gather, clean, and visualize the data used in this project.
         </p>
@@ -39,10 +45,19 @@
             The third visualization draws from the RapidAPI <a href="https://rapidapi.com/musicae-musicae-default/api/spotify-extended-audio-features-api" target="_blank">"Spotify Extended Audio Features API"</a>, which was queried for some hand-picked songs and their associated audio_features values. These values are ML-computed by Spotify and are not easily interpretable, but it sufficed to compare the differences between London and Bristol DnB songs. The reason I chose 5 songs from each city was to have a small enough sample size to be able to meaningfully cross-reference the data with the song feeling and feasibly make API requests. Given more time on the project, I would have liked to expand the sample size. The data was processed and visualized using the <a href="https://www.chartjs.org/" target="_blank">Chart.js JavaScript library</a>.
         </p>
 
+        <div id="divider"></div>
+        <h1>Literature Referenced in Research</h1>
         <p>
-            See GitHub repository to reproduce data: <a href="https://github.com/chrissanrow/dnb_scripts" target="_blank">GITHUB</a>
-            <br>
-            And project documentation: <a href="https://docs.google.com/document/d/1Q685WTDztEAObFQ62wxgci9-YIr3fhWVg7QX3odbnc4/edit?usp=sharing" target="_blank">GOOGLE DOC</a>
+            Quinn, Steven. “Rumble in the jungle: The invisible history of drum'n'bass.” Transformations, vol. 2, no. 2, 1 May 2002, <a href="https://doi.org/10.33011/tf.v2i2.3985">https://doi.org/10.33011/tf.v2i2.3985</a>.
+        </p>
+        <p>
+            Hyatt, Bailey. “ Drum & Bass: The Movement - A D&B Documentary.” YouTube, Drum & Bass Arena, <a href="https://www.youtube.com/watch?v=j8fu_TOKlg4">https://www.youtube.com/watch?v=j8fu_TOKlg4</a>.
+        </p>
+        <p>
+            Jenkins, Dave. “An Oral History of Bristol Drum'n'bass.” Red Bull, Red Bull, 23 May 2025, <a href="https://www.redbull.com/gb-en/bristol-drum-n-bass-history">https://www.redbull.com/gb-en/bristol-drum-n-bass-history</a>.
+        </p>
+        <p>
+            Belle-Fortune, Brian. All Crews: Journeys through Jungle. Vision Publishing, 2004. 
         </p>
     </div>
 </body>
